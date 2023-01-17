@@ -29,10 +29,10 @@ directories:
 
 files: directories
 	@echo "=======================\nCopiando arquivos\n=======================\n"
-	@echo "Copiando 'config/prometheus/*' -> 'container/prometheus/'"
-	@echo "Copiando 'config/web/*' -> 'container/web/'"
-	cp -R configs/prometheus/ container/prometheus/
-	cp -R configs/web/ container/web/
+	@echo "Copiando 'config/prometheus/*' -> '/container/prometheus/'"
+	@echo "Copiando 'config/web/*' -> '/container/web/'"
+	cp -R configs/prometheus/ /home/$(shell whoami)/container/prometheus/
+	cp -R configs/web/ /home/$(shell whoami)/container/web/
 	@echo "-----------------------------\nArquivos copiados com sucesso...\n-----------------------------\n"
 
 init_cluster: check_k8s
